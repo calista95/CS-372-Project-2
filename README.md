@@ -32,9 +32,13 @@ Basic procedure:
          - sends an appropriate error message (“File not found”, etc.) to ftclient on connection P, and ftclient displays the message on-screen.   
  - ftserver closes connection Q   
  - ftclient closes connection P and terminates.   
- - ftserver repeats from 2 (above) until terminated by a supervisor (SIGINT).   
+ - ftserver repeats from 2 (above) until terminated by a supervisor (SIGINT).  
     
-  Examples of error messages:   
+  Example of valid command (assumming file exists in server directory):  
+  ``
+  python ftclient.py 127.0.0.1 9999 -g exampletext.txt 9998
+  ```
+  Examples of command that would give error messages:   
   ```
   python ftclient.py 127.0.0.1 9999 -g exampletext.txt //missing dataport number
   python ftclient.py 127.0.0.1 9999 -l exampletext.txt 9998 //file name not needed for directory listing 
