@@ -6,13 +6,13 @@ Description: This is a client-server program that has two functionalities:
 
 The server is written in C, and the client is written in Python. 
 
-Running the server:  
+# Running the server:  
 ```
 gcc -o server ftserver.c
 server <port number> 
 ```
 
-Running the client: 
+# Running the client: 
 ```
 python ftclient.py <hostname> <port number> <command> <textfile name if applicable> <dataport>
 ```
