@@ -9,12 +9,12 @@ The server is written in C, and the client is written in Python.
 Running the server:  
 ```
 gcc -o server ftserver.c
-server <hostname> 
+server <port number> 
 ```
 
 Running the client: 
 ```
-python ftclient.py <port number> <command> <textfile name if applicable> <dataport>
+python ftclient.py <hostname> <port number> <command> <textfile name if applicable> <dataport>
 ```
 
 Basic procedure:  
@@ -33,3 +33,10 @@ Basic procedure:
  - ftserver closes connection Q   
  - ftclient closes connection P and terminates.   
  - ftserver repeats from 2 (above) until terminated by a supervisor (SIGINT).   
+    
+  Examples of error messages:   
+  ```
+  python ftclient.py 127.0.0.1 9999 -g exampletext.txt //missing dataport number
+  python ftclient.py 127.0.0.1 9999 -l exampletext.txt 9998 //file name not needed for directory listing 
+  python ftclient.py 127.0.0.1 9999 -a exampletext.txt 9998 //no such -a command 
+  ```
